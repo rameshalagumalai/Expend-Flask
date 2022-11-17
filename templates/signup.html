@@ -1,0 +1,15 @@
+{% extends 'boiler-plate.html' %}
+{% block title %} Expend | SignUp {% endblock %}
+{% block content %}
+  <div class="full-height bg-gray d-flex align-items-center justify-content-center">
+    <form class="rounded rouned-lg p-4 text-center bg-white w-25 d-flex flex-column" action="/sign-up" method="post">
+      <h1 class="text-success f-700">Expend</h1>
+      <h5 class="f-600">Sign Up</h5>
+      <input type="text" name="name" class="form-control mb-3" placeholder="Name">
+      <input type="email" name="email" class="form-control mb-3" placeholder="Email ID">
+      <input type="password" name="password" class="form-control mb-3" placeholder="Password">
+      <input type="password" name="confirmPassword" class="form-control mb-3" placeholder="Confirm Password">
+      <button type="submit" class="btn btn-primary ms-auto">Yes I'm in</button>
+    </form>
+  </div>
+{% endblock %}

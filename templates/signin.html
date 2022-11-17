@@ -1,0 +1,16 @@
+{% extends 'boiler-plate.html' %}
+{% block title %} Expend | SignIn {% endblock %}
+{% block content %}
+<div class="full-height bg-gray d-flex align-items-center justify-content-center">
+    <form class="rounded rouned-lg p-4 text-center bg-white w-25" action="/login" method="post">
+      <h1 class="text-success f-700">Expend</h1>
+      <h5 class="f-600">Login</h5>
+      <input type="email" name="email" class="form-control mb-3" placeholder="Email ID">
+      <input type="password" name="password" class="form-control mb-3" placeholder="Password">
+      <div class="d-flex align-items-center">
+        <a class="text-decoration-none" href="/sign-up">New user?</a>
+        <button type="submit" class="btn btn-primary ms-auto">Take me in</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}  

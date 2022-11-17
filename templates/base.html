@@ -32,14 +32,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Title</title>
   </head>
-  <body class="bg-gray">
-    <div class="d-flex justify-content-center">
-      <div class="col-6 bg-white rounded py-4 px-5 mt-5 main">
+  <body class="px-5 py-3">
         <h1 class="f-600">Hello Ramesh</h1>
         <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link active"
+              class="nav-link"
               id="home-tab"
               data-bs-toggle="tab"
               data-bs-target="#home-tab-pane"
@@ -67,7 +65,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link"
+              class="nav-link active"
               id="profile-tab"
               data-bs-toggle="tab"
               data-bs-target="#profile-tab-pane"
@@ -110,109 +108,111 @@
         </ul>
         <div class="tab-content mt-3" id="myTabContent">
           <div
-            class="tab-pane fade show active row d-flex"
+            class="tab-pane fade"
             id="home-tab-pane"
             role="tabpanel"
             aria-labelledby="home-tab"
             tabindex="0"
           >
-            <div class="col-5 p-0 d-flex">
-              <ol style="height: 80%" class="list-group overflow-auto">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
-                  <div class="ms-2 me-auto">
-                    <div class="fw-bold">Subheading</div>
-                    Content for list item
-                  </div>
-                  <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-              </ol>
-            </div>
-            <div class="col-7 p-0 ps-2">
-              <h3 class="p-2 mb-0 f-700">Today</h3>
-              <hr class="m-0" />
-              <div class="row p-2">
-                <div class="col-7">
-                  <canvas
-                    id="myChart1"
-                    style="width: 100%; height: 250px"
-                  ></canvas>
-                </div>
-                <div class="col-5">
-                  <h6 class="f-700 text-secondary">Total Expenses</h6>
-                  <h1 class="text-center f-700 large-text">
-                    500.0
-                  </h1>
-                </div>
+            <div class="row d-flex">
+              <div class="col-4 p-0 d-flex">
+                <ol style="height: 100%" class="list-group w-100 overflow-auto">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-start"
+                  >
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Subheading</div>
+                      Content for list item
+                    </div>
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </li>
+                </ol>
               </div>
+              <div class="col-8 p-0 ps-2">
+                <h1 class="p-2 mb-0 f-700">Today</h1>
+                <hr class="m-0" />
+                <div class="row p-2">
+                  <div class="col-8">
+                    <canvas
+                      id="myChart1"
+                      style="width: 100%; height: 250px"
+                    ></canvas>
+                  </div>
+                  <div class="col-4">
+                    <h4 class="f-700 text-secondary">Total Expenses</h4>
+                    <h1 class="text-center f-700 large-text">
+                      500.0
+                    </h1>
+                  </div>
+                </div>
+                </div>
             </div>
           </div>
           <div
-            class="tab-pane fade"
+            class="tab-pane fade row d-flex"
             id="categories-tab-pane"
             role="tabpanel"
             aria-labelledby="categories-tab"
@@ -221,13 +221,18 @@
             ...
           </div>
           <div
-            class="tab-pane fade"
+            class="tab-pane fade show active"
             id="profile-tab-pane"
             role="tabpanel"
             aria-labelledby="profile-tab"
             tabindex="0"
           >
-            ...
+            <h1 class="f-700">This week</h1>
+            <div class="row d-flex">
+              <div class="col-7">             
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -236,7 +241,14 @@
             aria-labelledby="contact-tab"
             tabindex="0"
           >
-            ...
+            <div class="row">
+              <div class="col-6">
+                <h2 class="f-700">Receivables</h2>
+              </div>
+              <div class="col-6">
+                <h2 class="f-700">Receivables</h2>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -248,8 +260,6 @@
             ...
           </div>
         </div>
-      </div>
-    </div>
     <script>
       var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
       var yValues = [55, 49, 44, 24, 15];
