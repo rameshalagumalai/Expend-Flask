@@ -1,0 +1,31 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.f-400 {
+    font-weight: 400;
+}
+
+.f-500 {
+    font-weight: 500;
+}
+
+.f-600 {
+    font-weight: 600;
+}
+
+.f-700 {
+    font-weight: 700;
+}
+
+.main {
+    height: 80vh;
+}
+
+.bg-gray {
+    background-color: #EEEEEE;
+}
+
+.row {
+    margin: 0;
+}
