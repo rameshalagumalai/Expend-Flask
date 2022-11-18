@@ -1,0 +1,105 @@
+{% extends 'boiler-plate.html' %}
+{% block title %} Expend | Daily {% endblock %}
+{% block content %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success px-5">
+    <div class="container-fluid">
+      <h3 class="mb-0 f-700 text-white">Expend</h3>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link me-3 active" aria-current="page" href="#">Daily</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/categories">Categories</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row d-flex px-5 py-3">
+    <div class="col-4 p-0 d-flex flex-column">
+      <div class="d-flex align-items-center">
+        <h1 class="f-700">Expenses</h1>
+        <button class="btn btn-light ms-auto btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <ol style="height: 100%" class="list-group w-100 overflow-auto">
+        {% for expense in data['expenses'] %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{expense[1]}}</div>
+            <i style="color: {{expense[6]}}" class="fa-solid fa-circle"></i> {{expense[5]}}
+          </div>
+          <span class="badge bg-primary rounded-pill">{{expense[2]}}</span>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="col-8 p-0 ps-2">
+      <h1 class="p-2 mb-0 f-700">Today</h1>
+      <hr class="m-0" />
+      <div class="p-2">
+        <h4 class="f-700 text-secondary">Total Expenses</h4>
+        <h1 class="f-700 large-text">
+          {{data['totalExpense']}}
+        </h1>
+        <canvas id="myChart1" style="width: 100%; height: 500px"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" method="post" action="/">
+        <div class="modal-header">
+          <h1 class="f-700" id="exampleModalLabel">New expense</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input class="form-control mb-2" type="text" name="name" placeholder="Title" required>
+          <div class="row">
+            <input class="form-control mb-2 col-6" type="number" name="amount" placeholder="Amount" required>
+            <select class="form-select col-6" name="category">
+              {% for category in data['categories'] %}
+                <option value={{category[0]}}>{{category[1]}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  <script>
+    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"];
+
+    new Chart("myChart1", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            backgroundColor: barColors,
+            data: yValues,
+          },
+        ],
+      },
+      options: {
+        title: {
+          display: true,
+          text: "World Wide Wine Production 2018",
+        },
+      },
+    });
+  </script>
+{% endblock %} 
