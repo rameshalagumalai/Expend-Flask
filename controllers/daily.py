@@ -69,7 +69,7 @@ def addNewExpense(data, date):
         print(email, name, limit, total)
         if total > limit:
             message = Mail(
-                from_email='19bcs007@mcet.in',
+                from_email='mail',
                 to_emails=email,
                 subject='Daily expense limit exceeded',
                 html_content='<h2>Hello ' + name + '</h2><h3>This is to notify you that your daily expense limit of ' + str(limit) + ' has been exceeded</h3>')
