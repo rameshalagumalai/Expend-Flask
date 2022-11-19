@@ -69,12 +69,12 @@ def addNewExpense(data, date):
         print(email, name, limit, total)
         if total > limit:
             message = Mail(
-                from_email='mail',
+                from_email='19bcs007@mcet.in',
                 to_emails=email,
                 subject='Daily expense limit exceeded',
                 html_content='<h2>Hello ' + name + '</h2><h3>This is to notify you that your daily expense limit of ' + str(limit) + ' has been exceeded</h3>')
             try:
-                sg = SendGridAPIClient('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')
+                sg = SendGridAPIClient('key')
                 response = sg.send(message)
                 print(response.status_code)
                 print(response.body)
