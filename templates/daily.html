@@ -16,24 +16,42 @@
           <li class="nav-item">
             <a class="nav-link" href="/categories">Categories</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">Set limit</a></li>
+              <li><form action="/" method="post"><input type="hidden" name="logout" value="1"><button class="dropdown-item btn btn-white" type="submit">Logout</a></button></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <div class="modal fade" id="exampleModal0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" method="post" action="/categories">
+        
+      </form>
+    </div>
+  </div>
+
   <div class="row d-flex px-5 py-3">
     <div class="col-4 p-0 d-flex flex-column">
       <div class="d-flex align-items-center">
         <h1 class="f-700">Expenses</h1>
         <button class="btn btn-light ms-auto btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
       </div>
-      <ol style="height: 100%" class="list-group w-100 overflow-auto">
+      <ol style="height: 80%" class="list-group w-100 overflow-auto">
         {% for expense in data['expenses'] %}
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
             <div class="fw-bold">{{expense[1]}}</div>
             <i style="color: {{expense[6]}}" class="fa-solid fa-circle"></i> {{expense[5]}}
           </div>
-          <span class="badge bg-primary rounded-pill">{{expense[2]}}</span>
+          <h3 class="f-700">{{expense[2]}}</h3>
         </li>
         {% endfor %}
       </ol>
@@ -46,7 +64,7 @@
         <h1 class="f-700 large-text">
           {{data['totalExpense']}}
         </h1>
-        <canvas id="myChart1" style="width: 100%; height: 500px"></canvas>
+        <canvas id="myChart1" style="width: 90%; height: 500px"></canvas>
       </div>
     </div>
   </div>
@@ -55,7 +73,7 @@
     <div class="modal-dialog">
       <form class="modal-content" method="post" action="/">
         <div class="modal-header">
-          <h1 class="f-700" id="exampleModalLabel">New expense</h1>
+          <h2 class="f-700 mb-0" id="exampleModalLabel">New expense</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -72,6 +90,24 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" method="post" action="/">
+        <div class="modal-header">
+          <h2 class="f-700 mb-0" id="exampleModalLabel">Change daily limit</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input class="form-control mb-3" type="number" name="limit" placeholder="Limit" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Set</button>
         </div>
       </form>
     </div>
